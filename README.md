@@ -14,9 +14,10 @@
 ## Технологии
 
 - ReactJS
-- HTML5, CSS3
+- styled-components
 - JavaScript (ES6+)
 - TypeScript
+- Сборщик Vite
 
 ## Установка и запуск
 
@@ -36,3 +37,5 @@ npm install
 ```bash
 npm run dev
 ```
+
+p.s. Ответы из блока "На подумать" лежать в App.tsx файле
