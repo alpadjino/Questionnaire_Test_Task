@@ -108,7 +108,7 @@ const TEST_ITEMS: TestVariant[] = [
 
 export const Test = () => {
   const dispatch = useAppDispatch();
-  const { questions, totalPages, currentPage, tempRatings, questionsPerPage } = useAppSelector((state) => state.test);
+  const { questions, totalPages, currentPage, tempRatings, questionsPerPage, isCompleted } = useAppSelector((state) => state.test);
 
   useEffect(() => {
     dispatch(init({ questions: TEST_ITEMS, questionsPerPage: 2 }));
@@ -140,7 +140,7 @@ export const Test = () => {
         </Header>
       </HeaderContainer>
 
-      {totalPages === currentPage && <Results questions={questions} />}
+      {isCompleted && <Results questions={questions} />}
       {questions.slice(currentPage * questionsPerPage, (currentPage + 1) * questionsPerPage).map(({ id, imageSrc, label, rating }) => (
         <ContentContainer key={id}>
           <RatingBar
